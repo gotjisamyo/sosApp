@@ -92,12 +92,12 @@ String? goToGoogleMapUrl(LatLng? latlng) {
 }
 
 String? getNameStationid(String? stationId) {
-  if (stationId == 'ab74d') {
-    return 'ตำรวจ';
+  if (stationId == 'AB74D') {
+    return 'สถานีตำรวจ';
   } else if (stationId == 'AF57A') {
-    return 'พยาบาล';
+    return 'โรงพยาบาล';
   } else if (stationId == 'AK36B') {
-    return 'ดับเพลิง';
+    return 'สถานีดับเพลิง';
   } else if (stationId == 'AE56C') {
     return 'กู้ภัยสว่างกตัญญู';
   } else if (stationId == 'GK731') {
@@ -120,16 +120,15 @@ String? placeToString(String? findPlace) {
 }
 
 String? changStatus(bool? status) {
-  if (status == true) {
+  if (status == false) {
     return "ได้ยอมรับการเเจ้งเหตุเเล้ว";
-  } else if (status == false) {
-    return "";
+  } else if (status == true) {
+    return "ยังไม่รับการเเจ้ง";
   }
   return null;
 }
 
 String? acceptButtonText(bool? reportStatus) {
-  // return reportStatus to string if reportStatus = true " รับเเจ้งเรื่องเเล้ว" false " รับเเจ้งเรื่อง"
   if (reportStatus == true) {
     return "รับเเจ้งเรื่องเเล้ว";
   } else {

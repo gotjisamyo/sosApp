@@ -700,6 +700,7 @@ class _PoliceFormWidgetState extends State<PoliceFormWidget> {
                                     postUser: currentUserReference,
                                     position: _model.googleMapsCenter,
                                     stationId: 'AB74D',
+                                    status: true,
                                   ),
                                   ...mapToFirestore(
                                     {

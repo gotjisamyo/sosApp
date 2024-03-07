@@ -23,6 +23,16 @@
     },
     {
       "collectionGroup": "Report_To_Station",
+      "fieldPath": "status",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Report_To_Station",
       "fieldPath": "station_id",
       "indexes": [
         {

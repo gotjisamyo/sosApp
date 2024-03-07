@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/componant/oficer_edit_profile_componant/oficer_edit_profile_componant_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -52,13 +51,7 @@ class _Auth1EditProfileWidgetState extends State<Auth1EditProfileWidget>
     _model = createModel(context, () => Auth1EditProfileModel());
 
     // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (valueOrDefault<bool>(currentUserDocument?.isOfficer, false)) {
-        context.pushNamed('auth_1_EditProfile');
-      } else {
-        context.pushNamed('auth_2_EditProfile');
-      }
-    });
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

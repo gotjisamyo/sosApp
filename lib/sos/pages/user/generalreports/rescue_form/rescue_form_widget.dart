@@ -701,6 +701,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                     postUser: currentUserReference,
                                     position: _model.googleMapsCenter,
                                     stationId: 'AE56C',
+                                    status: true,
                                   ),
                                   ...mapToFirestore(
                                     {

@@ -110,7 +110,13 @@ class _HeaderHomeWidgetState extends State<HeaderHomeWidget>
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 20.0, 0.0),
                     child: FutureBuilder<int>(
-                      future: queryReportToStationRecordCount(),
+                      future: queryReportToStationRecordCount(
+                        queryBuilder: (reportToStationRecord) =>
+                            reportToStationRecord.where(
+                          'status',
+                          isEqualTo: true,
+                        ),
+                      ),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {

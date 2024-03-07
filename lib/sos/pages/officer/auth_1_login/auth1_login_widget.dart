@@ -370,46 +370,8 @@ class _Auth1LoginWidgetState extends State<Auth1LoginWidget>
                                     return;
                                   }
 
-                                  if (valueOrDefault<bool>(
-                                      currentUserDocument?.isOfficer, false)) {
-                                    context.pushNamedAuth(
-                                        'HomeOfficer', context.mounted);
-
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'เข้าสู่ระบบสำเร็จ',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                  } else {
-                                    context.pushNamedAuth(
-                                        'home', context.mounted);
-
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'เข้าสู่ระบบสำเร็จ',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                  }
+                                  context.pushNamedAuth(
+                                      'changHome', context.mounted);
                                 },
                                 text: 'เข้าสู่ระบบ',
                                 options: FFButtonOptions(

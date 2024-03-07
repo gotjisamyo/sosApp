@@ -700,6 +700,7 @@ class _HospitalFormWidgetState extends State<HospitalFormWidget> {
                                     postUser: currentUserReference,
                                     position: _model.googleMapsCenter,
                                     stationId: 'AF57A',
+                                    status: true,
                                   ),
                                   ...mapToFirestore(
                                     {

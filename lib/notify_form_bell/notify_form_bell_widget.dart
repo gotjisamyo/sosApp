@@ -78,7 +78,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
             queryBuilder: (reportToStationRecord) =>
                 reportToStationRecord.where(
               'status',
-              isEqualTo: true,
+              isEqualTo: false,
             ),
             limit: 5,
           ),
@@ -302,9 +302,12 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      listViewReportToStationRecord
-                                                          .status
-                                                          .toString(),
+                                                      valueOrDefault<String>(
+                                                        functions.changStatus(
+                                                            listViewReportToStationRecord
+                                                                .status),
+                                                        'true',
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)

@@ -700,6 +700,7 @@ class _CarRepairFormWidgetState extends State<CarRepairFormWidget> {
                                     postUser: currentUserReference,
                                     position: _model.googleMapsCenter,
                                     stationId: 'GK731',
+                                    status: true,
                                   ),
                                   ...mapToFirestore(
                                     {

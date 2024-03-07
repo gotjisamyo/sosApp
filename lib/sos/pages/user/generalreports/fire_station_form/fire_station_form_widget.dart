@@ -703,6 +703,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                     postUser: currentUserReference,
                                     position: _model.googleMapsCenter,
                                     stationId: 'AK36B',
+                                    status: true,
                                   ),
                                   ...mapToFirestore(
                                     {
