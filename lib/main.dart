@@ -1,108 +1,254 @@
-import 'package:concentric_transition/concentric_transition.dart';
 import 'package:flutter/material.dart';
 
-final pages = [
-  const PageData(
-    icon: Icons.food_bank_outlined,
-    title: "Search for your favourite food",
-    bgColor: Color(0xff3b1791),
-    textColor: Colors.white,
-  ),
-  const PageData(
-    icon: Icons.shopping_bag_outlined,
-    title: "Add it to cart",
-    bgColor: Color(0xfffab800),
-    textColor: Color(0xff3b1790),
-  ),
-  const PageData(
-    icon: Icons.delivery_dining,
-    title: "Order and wait",
-    bgColor: Color(0xffffffff),
-    textColor: Color(0xff3b1790),
-  ),
-];
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'auth/firebase_auth/firebase_user_provider.dart';
+import 'auth/firebase_auth/auth_util.dart';
 
-class ConcentricAnimationOnboarding extends StatelessWidget {
-  const ConcentricAnimationOnboarding({Key? key}) : super(key: key);
+import 'backend/firebase/firebase_config.dart';
+import 'flutter_flow/flutter_flow_theme.dart';
+import 'flutter_flow/flutter_flow_util.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
+import 'flutter_flow/nav/nav.dart';
+import 'index.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
+  await initFirebase();
+
+  await FlutterFlowTheme.initialize();
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+
+  static _MyAppState of(BuildContext context) =>
+      context.findAncestorStateOfType<_MyAppState>()!;
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+
+  late Stream<BaseAuthUser> userStream;
+
+  late AppStateNotifier _appStateNotifier;
+  late GoRouter _router;
+
+  final authUserSub = authenticatedUserStream.listen((_) {});
+
+  @override
+  void initState() {
+    super.initState();
+
+    _appStateNotifier = AppStateNotifier.instance;
+    _router = createRouter(_appStateNotifier);
+    userStream = sosAppFirebaseUserStream()
+      ..listen((user) => _appStateNotifier.update(user));
+    jwtTokenStream.listen((_) {});
+    Future.delayed(
+      const Duration(milliseconds: 1000),
+      () => _appStateNotifier.stopShowingSplashImage(),
+    );
+  }
+
+  @override
+  void dispose() {
+    authUserSub.cancel();
+
+    super.dispose();
+  }
+
+  void setThemeMode(ThemeMode mode) => setState(() {
+        _themeMode = mode;
+        FlutterFlowTheme.saveThemeMode(mode);
+      });
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: ConcentricPageView(
-        colors: pages.map((p) => p.bgColor).toList(),
-        radius: screenWidth * 0.1,
-        nextButtonBuilder: (context) => Padding(
-          padding: const EdgeInsets.only(left: 3), // visual center
-          child: Icon(
-            Icons.navigate_next,
-            size: screenWidth * 0.08,
-          ),
-        ),
-        // enable itemcount to disable infinite scroll
-        // itemCount: pages.length,
-        // opacityFactor: 2.0,
-        scaleFactor: 2,
-        // verticalPosition: 0.7,
-        // direction: Axis.vertical,
-        // itemCount: pages.length,
-        // physics: NeverScrollableScrollPhysics(),
-        itemBuilder: (index) {
-          final page = pages[index % pages.length];
-          return SafeArea(
-            child: _Page(page: page),
-          );
-        },
+    return MaterialApp.router(
+      title: 'sosApp',
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale('en', '')],
+      theme: ThemeData(
+        brightness: Brightness.light,
+        useMaterial3: false,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        useMaterial3: false,
+      ),
+      themeMode: _themeMode,
+      routerConfig: _router,
     );
   }
 }
 
-class PageData {
-  final String? title;
-  final IconData? icon;
-  final Color bgColor;
-  final Color textColor;
+class NavBarPage extends StatefulWidget {
+  const NavBarPage({super.key, this.initialPage, this.page});
 
-  const PageData({
-    this.title,
-    this.icon,
-    this.bgColor = Colors.white,
-    this.textColor = Colors.black,
-  });
+  final String? initialPage;
+  final Widget? page;
+
+  @override
+  _NavBarPageState createState() => _NavBarPageState();
 }
 
-class _Page extends StatelessWidget {
-  final PageData page;
+/// This is the private State class that goes with NavBarPage.
+class _NavBarPageState extends State<NavBarPage> {
+  String _currentPageName = 'home';
+  late Widget? _currentPage;
 
-  const _Page({Key? key, required this.page}) : super(key: key);
+  @override
+  void initState() {
+    super.initState();
+    _currentPageName = widget.initialPage ?? _currentPageName;
+    _currentPage = widget.page;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(16.0),
-          margin: const EdgeInsets.all(16.0),
-          decoration:
-              BoxDecoration(shape: BoxShape.circle, color: page.textColor),
-          child: Icon(
-            page.icon,
-            size: screenHeight * 0.1,
-            color: page.bgColor,
+    final tabs = {
+      'emergency': const EmergencyWidget(),
+      'ReportAlert': const ReportAlertWidget(),
+      'home': const HomeWidget(),
+      'HomeOfficer': const HomeOfficerWidget(),
+    };
+    final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
+
+    final MediaQueryData queryData = MediaQuery.of(context);
+
+    return Scaffold(
+      body: MediaQuery(
+          data: queryData
+              .removeViewInsets(removeBottom: true)
+              .removeViewPadding(removeBottom: true),
+          child: _currentPage ?? tabs[_currentPageName]!),
+      extendBody: true,
+      bottomNavigationBar: FloatingNavbar(
+        currentIndex: currentIndex,
+        onTap: (i) => setState(() {
+          _currentPage = null;
+          _currentPageName = tabs.keys.toList()[i];
+        }),
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        selectedItemColor: const Color(0xFF981616),
+        unselectedItemColor: const Color(0x8A000000),
+        selectedBackgroundColor: const Color(0x00000000),
+        borderRadius: 8.0,
+        itemBorderRadius: 8.0,
+        margin: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+        width: double.infinity,
+        elevation: 0.0,
+        items: [
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 0 ? Icons.call : Icons.call,
+                  color:
+                      currentIndex == 0 ? const Color(0xFF981616) : const Color(0x8A000000),
+                  size: currentIndex == 0 ? 32.0 : 25.0,
+                ),
+                Text(
+                  'แจ้งเหตุด่วน',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 0
+                        ? const Color(0xFF981616)
+                        : const Color(0x8A000000),
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        Text(
-          page.title ?? "",
-          style: TextStyle(
-              color: page.textColor,
-              fontSize: screenHeight * 0.035,
-              fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-      ],
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 1
+                      ? FontAwesomeIcons.solidListAlt
+                      : Icons.list_alt_rounded,
+                  color:
+                      currentIndex == 1 ? const Color(0xFF981616) : const Color(0x8A000000),
+                  size: currentIndex == 1 ? 32.0 : 25.0,
+                ),
+                Text(
+                  'ประวัติการเเจ้งเตือน',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 1
+                        ? const Color(0xFF981616)
+                        : const Color(0x8A000000),
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 2 ? Icons.home_rounded : Icons.home_outlined,
+                  color:
+                      currentIndex == 2 ? const Color(0xFF981616) : const Color(0x8A000000),
+                  size: currentIndex == 2 ? 32.0 : 25.0,
+                ),
+                Text(
+                  'หน้าหลัก',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 2
+                        ? const Color(0xFF981616)
+                        : const Color(0x8A000000),
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 3 ? Icons.home_rounded : Icons.home_outlined,
+                  color:
+                      currentIndex == 3 ? const Color(0xFF981616) : const Color(0x8A000000),
+                  size: currentIndex == 3 ? 32.0 : 25.0,
+                ),
+                Text(
+                  'หน้าหลัก',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 3
+                        ? const Color(0xFF981616)
+                        : const Color(0x8A000000),
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
