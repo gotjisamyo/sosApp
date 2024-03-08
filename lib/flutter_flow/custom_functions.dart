@@ -145,3 +145,29 @@ Color? changAcceptButton(bool? status) {
     return null;
   }
 }
+
+int? volumeDToT(double? volume) {
+  // return volume as integer
+  if (volume == null) {
+    return null;
+  }
+  return (volume * 1000).toInt();
+}
+
+double? getVolume(int? getVoplume) {
+  // return getvolume as double
+  if (getVoplume == null) {
+    return null;
+  } else {
+    return math.pow(getVoplume, 3) * 4 / 3 * math.pi;
+  }
+}
+
+String? josnToString(String? jsonObject) {
+  // turn json array to string
+  if (jsonObject == null) {
+    return null;
+  }
+  final dynamic decoded = json.decode(jsonObject);
+  return decoded.toString();
+}

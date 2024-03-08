@@ -1,11 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'chang_home_model.dart';
 export 'chang_home_model.dart';
 
@@ -28,7 +26,10 @@ class _ChangHomeWidgetState extends State<ChangHomeWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (valueOrDefault<bool>(currentUserDocument?.isOfficer, false)) {
+      _model.user = await queryUsersRecordOnce(
+        singleRecord: true,
+      ).then((s) => s.firstOrNull);
+      if (_model.user!.isOfficer) {
         context.pushNamed('HomeOfficer');
       } else {
         context.pushNamed('home');

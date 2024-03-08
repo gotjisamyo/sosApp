@@ -3,10 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'onboardings_model.dart';
 export 'onboardings_model.dart';
 
@@ -39,8 +36,8 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 400.ms,
-          begin: Offset(3.0, 3.0),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(3.0, 3.0),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -59,8 +56,8 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
           curve: Curves.bounceOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.6, 0.6),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.6, 0.6),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -79,8 +76,8 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
           curve: Curves.easeInOut,
           delay: 350.ms,
           duration: 400.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -99,8 +96,8 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
           curve: Curves.easeInOut,
           delay: 400.ms,
           duration: 400.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -119,8 +116,8 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
           curve: Curves.bounceOut,
           delay: 300.ms,
           duration: 600.ms,
-          begin: Offset(0.6, 0.6),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.6, 0.6),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -158,7 +155,7 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
               child: Container(
                 width: double.infinity,
                 height: 500.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
                       Color(0xFF4B39EF),
@@ -173,7 +170,7 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
                 child: Container(
                   width: 100.0,
                   height: 100.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [Color(0xFF981616), Colors.white],
                       stops: [0.0, 1.0],
@@ -188,12 +185,12 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
                       Container(
                         width: 210.0,
                         height: 210.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xCCFFFFFF),
                           shape: BoxShape.circle,
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Image.asset(
                             'assets/images/logo.png',
                             width: 100.0,
@@ -205,7 +202,7 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
                           animationsMap['containerOnPageLoadAnimation2']!),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
                         child: Text(
                           'SOS!',
                           style: FlutterFlowTheme.of(context)
@@ -221,7 +218,7 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
                             animationsMap['textOnPageLoadAnimation1']!),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             44.0, 8.0, 44.0, 0.0),
                         child: Text(
                           'Chanthaburi',
@@ -244,16 +241,16 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
                   animationsMap['containerOnPageLoadAnimation1']!),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 44.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 44.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 16.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             context.pushNamed(
@@ -270,20 +267,20 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget>
                           options: FFButtonOptions(
                             width: 230.0,
                             height: 52.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: Colors.white,
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       fontSize: 16.0,
                                       fontWeight: FontWeight.w500,
                                     ),
                             elevation: 0.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFFE0E3E7),
                               width: 2.0,
                             ),

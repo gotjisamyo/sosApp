@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -12,7 +11,7 @@ class GeolocationApiCall {
   static Future<ApiCallResponse> call({
     String? latlngVar = '0',
   }) async {
-    final ffApiRequestBody = '''
+    const ffApiRequestBody = '''
 {
   "radioType": "gsm",
   "carrier": "Vodafone",
@@ -35,7 +34,7 @@ class GeolocationApiCall {
     );
   }
 
-  static dynamic? mylatlng(dynamic response) => getJsonField(
+  static dynamic mylatlng(dynamic response) => getJsonField(
         response,
         r'''$.location''',
       );
@@ -289,6 +288,30 @@ class PlaceApiCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+}
+
+class DirectionAPICall {
+  static Future<ApiCallResponse> call({
+    String? destination = '',
+    String? origin = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'directionAPI',
+      apiUrl: 'https://maps.googleapis.com/maps/api/directions/json',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'origin': origin,
+        'destination': destination,
+        'key': "AIzaSyC0v8nIr2Ece8HtQ--gJiY3k9H6L_noAkQ",
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 class ApiPagingParams {

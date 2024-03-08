@@ -45,3 +45,7 @@ export '/sos/pages/officer/auth_1_profile/auth1_profile_widget.dart'
 export '/chang_home/chang_home_widget.dart' show ChangHomeWidget;
 export '/sos/pages/user/report_detail/report_detail_widget.dart'
     show ReportDetailWidget;
+export '/footer/footer_widget.dart' show FooterWidget;
+export '/sos/pages/user/report_alert_accept/report_alert_accept_widget.dart'
+    show ReportAlertAcceptWidget;
+export '/googlemap/googlemap_widget.dart' show GooglemapWidget;

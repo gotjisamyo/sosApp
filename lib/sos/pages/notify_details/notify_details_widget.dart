@@ -3,11 +3,8 @@ import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'notify_details_model.dart';
 export 'notify_details_model.dart';
 
@@ -61,7 +58,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Color(0xFF101213),
               size: 30.0,
@@ -70,7 +67,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
               context.pop();
             },
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -87,10 +84,10 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             maxWidth: 570.0,
                           ),
                           decoration: BoxDecoration(
@@ -98,14 +95,14 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 12.0),
                                   child: Text(
                                     valueOrDefault<String>(
@@ -116,14 +113,14 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                         .headlineMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF101213),
+                                          color: const Color(0xFF101213),
                                           fontSize: 24.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10.0),
                                     child: Image.network(
@@ -135,23 +132,27 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Text(
-                                    dateTimeFormat('d/M/y H:mmm',
-                                        widget.report!.timePosted!),
+                                    dateTimeFormat(
+                                      'd/M/y H:mmm',
+                                      widget.report!.timePosted!,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF4B39EF),
+                                          color: const Color(0xFF4B39EF),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 12.0),
                                   child: Text(
                                     valueOrDefault<String>(
@@ -162,7 +163,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF57636C),
+                                          color: const Color(0xFF57636C),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -172,7 +173,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 12.0, 12.0, 12.0),
                                       child: Text(
                                         'แจ้งถึง',
@@ -181,7 +182,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 12.0, 12.0, 12.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -199,7 +200,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 12.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -213,7 +214,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                     },
                                     child: Container(
                                       width: double.infinity,
-                                      constraints: BoxConstraints(
+                                      constraints: const BoxConstraints(
                                         maxWidth: 570.0,
                                       ),
                                       decoration: BoxDecoration(
@@ -221,19 +222,19 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                         border: Border.all(
-                                          color: Color(0xFFE0E3E7),
+                                          color: const Color(0xFFE0E3E7),
                                           width: 1.0,
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(16.0),
+                                        padding: const EdgeInsets.all(16.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 16.0, 4.0),
                                               child: Text(
@@ -245,7 +246,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF57636C),
+                                                              const Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -256,17 +257,17 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     height: 200.0,
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -274,7 +275,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                                                     12.0),
                                                         child: Builder(
                                                             builder: (context) {
-                                                          final _googleMapMarker =
+                                                          final googleMapMarker =
                                                               widget.report
                                                                   ?.position;
                                                           return FlutterFlowGoogleMap(
@@ -289,12 +290,12 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                                                 widget.report!
                                                                     .position!,
                                                             markers: [
-                                                              if (_googleMapMarker !=
+                                                              if (googleMapMarker !=
                                                                   null)
                                                                 FlutterFlowMarker(
-                                                                  _googleMapMarker
+                                                                  googleMapMarker
                                                                       .serialize(),
-                                                                  _googleMapMarker,
+                                                                  googleMapMarker,
                                                                 ),
                                                             ],
                                                             markerColor:
@@ -333,23 +334,23 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: Container(
                                                     height: 32.0,
                                                     decoration: BoxDecoration(
-                                                      color: Color(0xFF981616),
+                                                      color: const Color(0xFF981616),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -374,7 +375,7 @@ class _NotifyDetailsWidgetState extends State<NotifyDetailsWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                                Icon(
+                                                const Icon(
                                                   Icons.chevron_right_rounded,
                                                   color: Color(0xFF57636C),
                                                   size: 24.0,

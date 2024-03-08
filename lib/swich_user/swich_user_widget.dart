@@ -1,12 +1,9 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'swich_user_model.dart';
 export 'swich_user_model.dart';
 
@@ -102,11 +99,11 @@ class _SwichUserWidgetState extends State<SwichUserWidget>
                   Container(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.45,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xFFF5F5F5),
                     ),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
@@ -143,7 +140,7 @@ class _SwichUserWidgetState extends State<SwichUserWidget>
                                   .headlineMedium
                                   .override(
                                     fontFamily: 'Outfit',
-                                    color: Color(0xFF333333),
+                                    color: const Color(0xFF333333),
                                     fontSize: 24.0,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -173,11 +170,11 @@ class _SwichUserWidgetState extends State<SwichUserWidget>
                     child: Container(
                       width: double.infinity,
                       height: MediaQuery.sizeOf(context).height * 0.5,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xFF981616),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 16.0),
                         child: InkWell(
                           splashColor: Colors.transparent,

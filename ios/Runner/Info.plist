@@ -59,8 +59,6 @@
     <string>In order to take a picture or video, this app requires permission to access the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
     <string>In order to upload data, this app requires permission to access the photo library.</string>
-	<key>PermissionGroupNotification</key>
-    <string>กรุณาเปิด การเเจ้งเตือน ของคุณ</string>
 	<key>NSMicrophoneUsageDescription</key>
     <string>กรุณาเปิด ไมค์โครโฟน ของคุณ</string>
 	<key>NSContactsUsageDescription</key>
@@ -71,6 +69,8 @@
     <string>กรุณาเปิด biometrics ของคุณ</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
     <string>กรุณาเปิด บลูธูท ของคุณ</string>
+	<key>PermissionGroupNotification</key>
+    <string>กรุณาเปิดการเเจ้งเตืนของคุณ</string>
 
 
 	<key>UILaunchStoryboardName</key>

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/componant/component_detail_report_header/component_detail_report_header_widget.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
@@ -6,10 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'report_detail_model.dart';
 export 'report_detail_model.dart';
 
@@ -99,7 +95,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: wrapWithModel(
                             model: _model.componentDetailReportHeaderModel,
@@ -107,16 +103,16 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                             child: ComponentDetailReportHeaderWidget(
                               imgCom: reportDetailUsersRecord?.photoUrl,
                               displayname: reportDetailUsersRecord!.displayName,
-                              phone: reportDetailUsersRecord!.phoneNumber,
+                              phone: reportDetailUsersRecord.phoneNumber,
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
@@ -127,9 +123,9 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                             child: Stack(
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -138,7 +134,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 12.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -161,7 +157,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                         Stack(
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Container(
                                                 width: double.infinity,
@@ -175,11 +171,11 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(2.0),
+                                                            const EdgeInsets.all(2.0),
                                                         child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
@@ -204,17 +200,22 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
-                                            dateTimeFormat('d/M/y H:mmm',
-                                                widget.report!.timePosted!),
+                                            dateTimeFormat(
+                                              'd/M/y H:mmm',
+                                              widget.report!.timePosted!,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: Color(0xFF4B39EF),
+                                                  color: const Color(0xFF4B39EF),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -222,7 +223,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 12.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -246,7 +247,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 12.0, 12.0),
                                               child: Text(
@@ -257,7 +258,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 12.0, 12.0),
                                               child: Text(
@@ -278,7 +279,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 8.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -292,7 +293,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                             },
                                             child: Container(
                                               width: double.infinity,
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                 maxWidth: double.infinity,
                                                 maxHeight: 290.0,
                                               ),
@@ -311,7 +312,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(16.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -320,7 +321,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -350,16 +351,16 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
-                                                          child: Container(
+                                                          child: SizedBox(
                                                             height: 200.0,
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -368,7 +369,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                                 child: Builder(
                                                                     builder:
                                                                         (context) {
-                                                                  final _googleMapMarker =
+                                                                  final googleMapMarker =
                                                                       widget
                                                                           .report
                                                                           ?.position;
@@ -386,12 +387,12 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                                             .report!
                                                                             .position!,
                                                                     markers: [
-                                                                      if (_googleMapMarker !=
+                                                                      if (googleMapMarker !=
                                                                           null)
                                                                         FlutterFlowMarker(
-                                                                          _googleMapMarker
+                                                                          googleMapMarker
                                                                               .serialize(),
-                                                                          _googleMapMarker,
+                                                                          googleMapMarker,
                                                                         ),
                                                                     ],
                                                                     markerColor:
@@ -436,7 +437,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -446,7 +447,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                             height: 32.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF981616),
                                                               borderRadius:
                                                                   BorderRadius
@@ -454,11 +455,11 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                                           8.0),
                                                             ),
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -502,7 +503,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               await widget.report!.reference.update(
@@ -518,10 +519,10 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 40.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   functions.changAcceptButton(
@@ -534,7 +535,7 @@ class _ReportDetailWidgetState extends State<ReportDetailWidget> {
                                                         color: Colors.white,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),

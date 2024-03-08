@@ -10,12 +10,9 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
-import 'package:provider/provider.dart';
 import 'fire_station_form_model.dart';
 export 'fire_station_form_model.dart';
 
@@ -107,7 +104,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
             resizeToAvoidBottomInset: false,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: AppBar(
-              backgroundColor: Color(0xFF981616),
+              backgroundColor: const Color(0xFF981616),
               automaticallyImplyLeading: false,
               leading: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -132,7 +129,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                       fontWeight: FontWeight.w500,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0.0,
             ),
@@ -142,14 +139,14 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               'สถานีดับเพลิง',
@@ -165,7 +162,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -190,52 +187,52 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF606A85),
+                                          color: const Color(0xFF606A85),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFFE5E7EB),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFF6F61EF),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFF15161E),
+                                        color: const Color(0xFF15161E),
                                         fontSize: 14.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                   minLines: 1,
-                                  cursorColor: Color(0xFF6F61EF),
+                                  cursorColor: const Color(0xFF6F61EF),
                                   validator: _model.titleControllerValidator
                                       .asValidator(context),
                                 ),
@@ -259,66 +256,66 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF15161E),
+                                          color: const Color(0xFF15161E),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFFE5E7EB),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFF6F61EF),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFF15161E),
+                                        color: const Color(0xFF15161E),
                                         fontSize: 14.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                   maxLines: 16,
                                   minLines: 6,
-                                  cursorColor: Color(0xFF6F61EF),
+                                  cursorColor: const Color(0xFF6F61EF),
                                   validator: _model.detailControllerValidator
                                       .asValidator(context),
                                 ),
-                              ].divide(SizedBox(height: 12.0)),
+                              ].divide(const SizedBox(height: 12.0)),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Container(
                               width: double.infinity,
                               height: 265.0,
-                              constraints: BoxConstraints(
+                              constraints: const BoxConstraints(
                                 maxHeight: double.infinity,
                               ),
                               decoration: BoxDecoration(
@@ -330,12 +327,12 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           1.0, 0.0, 0.0, 0.0),
                                       child: Builder(builder: (context) {
-                                        final _googleMapMarker =
+                                        final googleMapMarker =
                                             functions.stringToLatlng(
                                                 valueOrDefault<String>(
                                           _model.toResult,
@@ -355,10 +352,10 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                             '12.6018278,102.0527786',
                                           ))!,
                                           markers: [
-                                            if (_googleMapMarker != null)
+                                            if (googleMapMarker != null)
                                               FlutterFlowMarker(
-                                                _googleMapMarker.serialize(),
-                                                _googleMapMarker,
+                                                googleMapMarker.serialize(),
+                                                googleMapMarker,
                                               ),
                                           ],
                                           markerColor: GoogleMarkerColor.violet,
@@ -378,7 +375,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.89, 0.77),
+                                    alignment: const AlignmentDirectional(0.89, 0.77),
                                     child: PointerInterceptor(
                                       intercepting: isWeb,
                                       child: FutureBuilder<ApiCallResponse>(
@@ -443,7 +440,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                                                 .primaryText,
                                                       ),
                                                     ),
-                                                    duration: Duration(
+                                                    duration: const Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
@@ -464,7 +461,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                                                 .primaryText,
                                                       ),
                                                     ),
-                                                    duration: Duration(
+                                                    duration: const Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
@@ -477,18 +474,18 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                               setState(() {});
                                             },
                                             text: '',
-                                            icon: Icon(
+                                            icon: const Icon(
                                               Icons.person_pin_circle,
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
                                               width: 40.0,
                                               height: 40.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(7.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0xFF981616),
+                                              color: const Color(0xFF981616),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -497,7 +494,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                                         color: Colors.white,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -514,7 +511,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -526,7 +523,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -536,9 +533,9 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -548,11 +545,11 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(12.0),
                                   bottomRight: Radius.circular(12.0),
                                   topLeft: Radius.circular(0.0),
@@ -562,7 +559,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -633,7 +630,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -641,29 +638,29 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                               },
                               child: Container(
                                 width: double.infinity,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   maxWidth: 500.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
-                                    color: Color(0xFFE5E7EB),
+                                    color: const Color(0xFFE5E7EB),
                                     width: 2.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.add_a_photo_rounded,
                                         color: Color(0xFF981616),
                                         size: 32.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -678,7 +675,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF15161E),
+                                                color: const Color(0xFF15161E),
                                                 fontSize: 14.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -691,7 +688,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 12.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -724,7 +721,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -733,17 +730,17 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                 context.pushNamed('home');
                               },
                               text: 'ส่ง',
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.receipt_long,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 48.0,
-                                padding: EdgeInsets.all(0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsets.all(0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF981616),
+                                color: const Color(0xFF981616),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -753,7 +750,7 @@ class _FireStationFormWidgetState extends State<FireStationFormWidget> {
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 4.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
