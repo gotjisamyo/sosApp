@@ -4,9 +4,13 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -32,8 +36,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -56,8 +60,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -80,8 +84,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -104,8 +108,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -193,11 +197,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   wrapWithModel(
                     model: _model.headerHomeModel,
                     updateCallback: () => setState(() {}),
-                    child: const HeaderHomeWidget(),
+                    child: HeaderHomeWidget(),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       height: 10.0,
@@ -208,9 +212,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Autocomplete<String>(
-                      initialValue: const TextEditingValue(),
+                      initialValue: TextEditingValue(),
                       optionsBuilder: (textEditingValue) {
                         if (textEditingValue.text == '') {
                           return const Iterable<String>.empty();
@@ -231,7 +235,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           options: options.toList(),
                           onSelected: onSelected,
                           textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                          textHighlightStyle: const TextStyle(),
+                          textHighlightStyle: TextStyle(),
                           elevation: 4.0,
                           optionBackgroundColor:
                               FlutterFlowTheme.of(context).primaryBackground,
@@ -271,7 +275,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF606A85),
+                                  color: Color(0xFF606A85),
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -279,41 +283,41 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF606A85),
+                                  color: Color(0xFF606A85),
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFFE5E7EB),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFF981616),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
-                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
-                            suffixIcon: const Icon(
+                            suffixIcon: Icon(
                               Icons.search_rounded,
                               color: Color(0xFF606A85),
                             ),
@@ -327,7 +331,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     fontWeight: FontWeight.w500,
                                   ),
                           textAlign: TextAlign.start,
-                          cursorColor: const Color(0xFF6F61EF),
+                          cursorColor: Color(0xFF6F61EF),
                           validator: _model.findplaceControllerValidator
                               .asValidator(context),
                         );
@@ -342,21 +346,21 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                           child: Container(
                             width: 402.0,
                             height: 155.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x00EE8B60),
+                              color: Color(0x00EE8B60),
                               image: DecorationImage(
                                 fit: BoxFit.fill,
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 image: Image.asset(
                                   'assets/images/Group_34.png',
                                 ).image,
                               ),
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
                                 topLeft: Radius.circular(12.0),
@@ -364,40 +368,40 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               ),
                               shape: BoxShape.rectangle,
                             ),
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                           ),
                         ),
                       ],
                     ),
                     back: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                       child: Container(
                         width: 402.0,
                         height: 164.0,
                         decoration: BoxDecoration(
-                          color: const Color(0x00EE8B60),
+                          color: Color(0x00EE8B60),
                           image: DecorationImage(
                             fit: BoxFit.fitWidth,
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             image: Image.asset(
                               'assets/images/Group_35.png',
                             ).image,
                           ),
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
                             topLeft: Radius.circular(12.0),
                             topRight: Radius.circular(12.0),
                           ),
                         ),
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                       ),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 0.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 0.0, 5.0),
                     child: Text(
                       'แจ้งเหตุทั่วไป',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -408,26 +412,26 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 16.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 16.0, 0.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
                           width: 90.0,
                           height: 100.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Color(0x004B39EF),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 5.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         1.0, 1.0, 1.0, 1.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -438,7 +442,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         currentUserLocationValue =
                                             await getCurrentUserLocation(
                                                 defaultLocation:
-                                                    const LatLng(0.0, 0.0));
+                                                    LatLng(0.0, 0.0));
 
                                         context.pushNamed(
                                           'PoliceForm',
@@ -454,11 +458,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         width: 75.0,
                                         height: 75.0,
                                         decoration: BoxDecoration(
-                                          color: const Color(0x004B39EF),
+                                          color: Color(0x004B39EF),
                                           image: DecorationImage(
                                             fit: BoxFit.fill,
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             image: Image.asset(
                                               Theme.of(context).brightness ==
                                                       Brightness.dark
@@ -468,13 +472,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           ),
                                         ),
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -494,7 +498,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Text(
                                     'สถานีตำรวจ',
                                     style:
@@ -509,19 +513,19 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         Container(
                           width: 90.0,
                           height: 100.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Color(0x004B39EF),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 5.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         1.0, 1.0, 1.0, 1.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -532,7 +536,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         currentUserLocationValue =
                                             await getCurrentUserLocation(
                                                 defaultLocation:
-                                                    const LatLng(0.0, 0.0));
+                                                    LatLng(0.0, 0.0));
 
                                         context.pushNamed(
                                           'HospitalForm',
@@ -549,11 +553,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         width: 75.0,
                                         height: 75.0,
                                         decoration: BoxDecoration(
-                                          color: const Color(0x004B39EF),
+                                          color: Color(0x004B39EF),
                                           image: DecorationImage(
                                             fit: BoxFit.fill,
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             image: Image.asset(
                                               Theme.of(context).brightness ==
                                                       Brightness.dark
@@ -565,13 +569,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               BorderRadius.circular(0.0),
                                         ),
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -591,7 +595,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Text(
                                     'โรงพยาบาล',
                                     style:
@@ -606,19 +610,19 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         Container(
                           width: 90.0,
                           height: 100.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Color(0x004B39EF),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 5.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         1.0, 1.0, 1.0, 1.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -629,7 +633,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         currentUserLocationValue =
                                             await getCurrentUserLocation(
                                                 defaultLocation:
-                                                    const LatLng(0.0, 0.0));
+                                                    LatLng(0.0, 0.0));
 
                                         context.pushNamed(
                                           'FireStationForm',
@@ -645,11 +649,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         width: 75.0,
                                         height: 75.0,
                                         decoration: BoxDecoration(
-                                          color: const Color(0x004B39EF),
+                                          color: Color(0x004B39EF),
                                           image: DecorationImage(
                                             fit: BoxFit.fill,
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             image: Image.asset(
                                               Theme.of(context).brightness ==
                                                       Brightness.dark
@@ -661,13 +665,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               BorderRadius.circular(0.0),
                                         ),
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -687,7 +691,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Text(
                                     'สถานีดับเพลิง',
                                     style:
@@ -702,16 +706,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         Container(
                           width: 100.0,
                           height: 100.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Color(0x004B39EF),
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       1.0, 1.0, 1.0, 1.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -722,7 +726,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       currentUserLocationValue =
                                           await getCurrentUserLocation(
                                               defaultLocation:
-                                                  const LatLng(0.0, 0.0));
+                                                  LatLng(0.0, 0.0));
 
                                       context.pushNamed(
                                         'RescueForm',
@@ -738,11 +742,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       width: 75.0,
                                       height: 75.0,
                                       decoration: BoxDecoration(
-                                        color: const Color(0x004B39EF),
+                                        color: Color(0x004B39EF),
                                         image: DecorationImage(
                                           fit: BoxFit.fill,
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           image: Image.asset(
                                             Theme.of(context).brightness ==
                                                     Brightness.dark
@@ -753,13 +757,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         borderRadius:
                                             BorderRadius.circular(0.0),
                                       ),
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 16.0, 16.0, 16.0),
                                           child: ClipRRect(
                                             borderRadius:
@@ -779,7 +783,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 1.0),
+                                alignment: AlignmentDirectional(0.0, 1.0),
                                 child: Text(
                                   'กู้ภัยสว่างกตัญญู',
                                   style:
@@ -793,28 +797,28 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
-                  const Divider(
+                  Divider(
                     thickness: 1.0,
                     color: Color(0xFFE5E7EB),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 0.0, 0.0),
                     child: Text(
                       'บริการอื่นๆ',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Plus Jakarta Sans',
-                            color: const Color(0xFF606A85),
+                            color: Color(0xFF606A85),
                             fontSize: 24.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -822,16 +826,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           Container(
                             width: 90.0,
                             height: 100.0,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Color(0x004B39EF),
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         1.0, 1.0, 1.0, 1.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -842,7 +846,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         currentUserLocationValue =
                                             await getCurrentUserLocation(
                                                 defaultLocation:
-                                                    const LatLng(0.0, 0.0));
+                                                    LatLng(0.0, 0.0));
 
                                         context.pushNamed(
                                           'CarRepairForm',
@@ -859,11 +863,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         width: 75.0,
                                         height: 75.0,
                                         decoration: BoxDecoration(
-                                          color: const Color(0x004B39EF),
+                                          color: Color(0x004B39EF),
                                           image: DecorationImage(
                                             fit: BoxFit.fill,
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             image: Image.asset(
                                               'assets/images/__1_-removebg-preview.png',
                                             ).image,
@@ -872,13 +876,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               BorderRadius.circular(0.0),
                                         ),
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -898,7 +902,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Text(
                                     'ช่างซ่อมรถ',
                                     style:

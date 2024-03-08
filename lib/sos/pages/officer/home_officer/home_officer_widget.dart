@@ -5,9 +5,12 @@ import '/componant/header_home_officer/header_home_officer_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'home_officer_model.dart';
 export 'home_officer_model.dart';
 
@@ -85,11 +88,11 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                   wrapWithModel(
                     model: _model.headerHomeOfficerModel,
                     updateCallback: () => setState(() {}),
-                    child: const HeaderHomeOfficerWidget(),
+                    child: HeaderHomeOfficerWidget(),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       height: 10.0,
@@ -100,9 +103,9 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Autocomplete<String>(
-                      initialValue: const TextEditingValue(),
+                      initialValue: TextEditingValue(),
                       optionsBuilder: (textEditingValue) {
                         if (textEditingValue.text == '') {
                           return const Iterable<String>.empty();
@@ -123,7 +126,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                           options: options.toList(),
                           onSelected: onSelected,
                           textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                          textHighlightStyle: const TextStyle(),
+                          textHighlightStyle: TextStyle(),
                           elevation: 4.0,
                           optionBackgroundColor:
                               FlutterFlowTheme.of(context).primaryBackground,
@@ -163,7 +166,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF606A85),
+                                  color: Color(0xFF606A85),
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -171,41 +174,41 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF606A85),
+                                  color: Color(0xFF606A85),
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFFE5E7EB),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFF981616),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
-                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
-                            suffixIcon: const Icon(
+                            suffixIcon: Icon(
                               Icons.search_rounded,
                               color: Color(0xFF606A85),
                             ),
@@ -219,7 +222,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           textAlign: TextAlign.start,
-                          cursorColor: const Color(0xFF6F61EF),
+                          cursorColor: Color(0xFF6F61EF),
                           validator: _model.findplaceControllerValidator
                               .asValidator(context),
                         );
@@ -264,7 +267,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                 listViewReportToStationRecordList[
                                     listViewIndex];
                             return Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -297,7 +300,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 8.0, 8.0, 8.0),
                                         child: ClipRRect(
                                           borderRadius:
@@ -321,7 +324,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                         child: Stack(
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.97, -0.82),
                                               child: Icon(
                                                 Icons.keyboard_arrow_right,
@@ -332,10 +335,10 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, -1.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 5.0),
                                                 child: Text(
@@ -358,7 +361,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: SelectionArea(
                                                   child: AutoSizeText(
@@ -384,7 +387,7 @@ class _HomeOfficerWidgetState extends State<HomeOfficerWidget> {
                                               )),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.98, 0.98),
                                               child: Text(
                                                 dateTimeFormat(

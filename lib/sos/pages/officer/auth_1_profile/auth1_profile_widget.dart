@@ -7,6 +7,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'auth1_profile_model.dart';
 export 'auth1_profile_model.dart';
 
@@ -39,8 +41,8 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
           curve: Curves.easeInOut,
           delay: 400.ms,
           duration: 600.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 60.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -81,10 +83,10 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: 770.0,
             ),
             decoration: BoxDecoration(
@@ -97,10 +99,10 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                 wrapWithModel(
                   model: _model.headercompos1Model,
                   updateCallback: () => setState(() {}),
-                  child: const Headercompos1Widget(),
+                  child: Headercompos1Widget(),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 30.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 30.0, 0.0, 0.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => Text(
                       currentUserDisplayName,
@@ -112,7 +114,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
                   child: Text(
                     currentUserEmail,
                     style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -122,7 +124,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                   child: Text(
                     'Your Account',
                     style: FlutterFlowTheme.of(context).labelMedium,
@@ -130,7 +132,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -144,7 +146,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                       height: 60.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -159,7 +161,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -169,7 +171,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                               size: 24.0,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'แก้ไขโปรไฟล์',
@@ -178,7 +180,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                             ),
                             Expanded(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.9, 0.0),
+                                alignment: AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -194,7 +196,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                   child: Text(
                     'การตั้งค่าแอปพลิเคชั่น',
                     style: FlutterFlowTheme.of(context).labelMedium,
@@ -202,7 +204,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -216,7 +218,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                       height: 60.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -231,7 +233,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -241,7 +243,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                               size: 24.0,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'ตั้งค่า',
@@ -250,7 +252,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                             ),
                             Expanded(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.9, 0.0),
+                                alignment: AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -267,7 +269,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -281,7 +283,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                       height: 60.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -296,7 +298,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -306,7 +308,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                               size: 24.0,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'เงื่อนไข เเละ ข้อตกลง',
@@ -315,7 +317,7 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                             ),
                             Expanded(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.9, 0.0),
+                                alignment: AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -331,10 +333,10 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         GoRouter.of(context).prepareAuthEvent();
@@ -348,9 +350,9 @@ class _Auth1ProfileWidgetState extends State<Auth1ProfileWidget>
                         width: 150.0,
                         height: 44.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle: FlutterFlowTheme.of(context).bodyLarge,
                         elevation: 0.0,

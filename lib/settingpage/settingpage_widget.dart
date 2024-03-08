@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'settingpage_model.dart';
 export 'settingpage_model.dart';
 
@@ -45,7 +47,7 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
           borderColor: Colors.transparent,
           borderRadius: 30.0,
           buttonSize: 46.0,
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_rounded,
             color: Color(0xFF14181B),
             size: 25.0,
@@ -58,12 +60,12 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
           'ตั้งค่า',
           style: FlutterFlowTheme.of(context).headlineSmall.override(
                 fontFamily: 'Outfit',
-                color: const Color(0xFF14181B),
+                color: Color(0xFF14181B),
                 fontSize: 24.0,
                 fontWeight: FontWeight.w500,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -71,7 +73,7 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -80,7 +82,7 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
                     'เลือกการแจ้งเตือนที่คุณต้องการรับด้านล่าง แล้วเราจะอัปเดตการตั้งค่า',
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Plus Jakarta Sans',
-                          color: const Color(0xFF57636C),
+                          color: Color(0xFF57636C),
                           fontSize: 14.0,
                           fontWeight: FontWeight.normal,
                         ),
@@ -93,7 +95,7 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(22.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(22.0, 0.0, 0.0, 0.0),
                 child: Text(
                   'ระดับเสียง',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -103,12 +105,12 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: SliderTheme(
-                  data: const SliderThemeData(
+                  data: SliderThemeData(
                     showValueIndicator: ShowValueIndicator.always,
                   ),
-                  child: SizedBox(
+                  child: Container(
                     width: 290.0,
                     child: Slider(
                       activeColor: FlutterFlowTheme.of(context).primary,
@@ -129,30 +131,30 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
             ],
           ),
           Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
               child: Text(
                 'เพิ่มหรือลดระดับเสียง',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Inter',
-                      color: const Color(0xFF8B97A2),
+                      color: Color(0xFF8B97A2),
                     ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: SwitchListTile.adaptive(
               value: _model.switchListTileValue1 ??= true,
               onChanged: (newValue) async {
-                setState(() => _model.switchListTileValue1 = newValue);
+                setState(() => _model.switchListTileValue1 = newValue!);
               },
               title: Text(
                 'เปิดการเเจ้งเตือน',
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
                       fontFamily: 'Plus Jakarta Sans',
-                      color: const Color(0xFF14181B),
+                      color: Color(0xFF14181B),
                       fontSize: 16.0,
                       fontWeight: FontWeight.normal,
                       lineHeight: 2.0,
@@ -162,30 +164,30 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
                 'ปิดการใช้งานหากไม่ต้องการรับการเเจ้งเตือน',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Plus Jakarta Sans',
-                      color: const Color(0xFF8B97A2),
+                      color: Color(0xFF8B97A2),
                       fontSize: 14.0,
                       fontWeight: FontWeight.normal,
                     ),
               ),
               tileColor: Colors.white,
-              activeColor: const Color(0xFF4B39EF),
-              activeTrackColor: const Color(0x4C4B39EF),
+              activeColor: Color(0xFF4B39EF),
+              activeTrackColor: Color(0x4C4B39EF),
               dense: false,
               controlAffinity: ListTileControlAffinity.trailing,
               contentPadding:
-                  const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
+                  EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
             ),
           ),
           SwitchListTile.adaptive(
             value: _model.switchListTileValue2 ??= true,
             onChanged: (newValue) async {
-              setState(() => _model.switchListTileValue2 = newValue);
+              setState(() => _model.switchListTileValue2 = newValue!);
             },
             title: Text(
               'การโทร',
               style: FlutterFlowTheme.of(context).bodyLarge.override(
                     fontFamily: 'Plus Jakarta Sans',
-                    color: const Color(0xFF14181B),
+                    color: Color(0xFF14181B),
                     fontSize: 16.0,
                     fontWeight: FontWeight.normal,
                     lineHeight: 2.0,
@@ -195,29 +197,29 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
               'ปิดการใช้งานหากไม่ต้องการรับสายโทรเข้า',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Plus Jakarta Sans',
-                    color: const Color(0xFF8B97A2),
+                    color: Color(0xFF8B97A2),
                     fontSize: 14.0,
                     fontWeight: FontWeight.normal,
                   ),
             ),
             tileColor: Colors.white,
-            activeColor: const Color(0xFF4B39EF),
-            activeTrackColor: const Color(0x4C4B39EF),
+            activeColor: Color(0xFF4B39EF),
+            activeTrackColor: Color(0x4C4B39EF),
             dense: false,
             controlAffinity: ListTileControlAffinity.trailing,
             contentPadding:
-                const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
+                EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
           ),
           SwitchListTile.adaptive(
             value: _model.switchListTileValue3 ??= true,
             onChanged: (newValue) async {
-              setState(() => _model.switchListTileValue3 = newValue);
+              setState(() => _model.switchListTileValue3 = newValue!);
             },
             title: Text(
               'การเเชร์ตำเเหน่ง',
               style: FlutterFlowTheme.of(context).bodyLarge.override(
                     fontFamily: 'Plus Jakarta Sans',
-                    color: const Color(0xFF14181B),
+                    color: Color(0xFF14181B),
                     fontSize: 16.0,
                     fontWeight: FontWeight.normal,
                     lineHeight: 2.0,
@@ -227,21 +229,21 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
               'อนุญาตให้เข้าถึงการเเชร์ตำเเหน่ง',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Plus Jakarta Sans',
-                    color: const Color(0xFF8B97A2),
+                    color: Color(0xFF8B97A2),
                     fontSize: 14.0,
                     fontWeight: FontWeight.normal,
                   ),
             ),
             tileColor: Colors.white,
-            activeColor: const Color(0xFF4B39EF),
-            activeTrackColor: const Color(0x4C4B39EF),
+            activeColor: Color(0xFF4B39EF),
+            activeTrackColor: Color(0x4C4B39EF),
             dense: false,
             controlAffinity: ListTileControlAffinity.trailing,
             contentPadding:
-                const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
+                EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 context.pop();
@@ -250,9 +252,9 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
               options: FFButtonOptions(
                 width: 190.0,
                 height: 50.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: const Color(0xFF981616),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: Color(0xFF981616),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Plus Jakarta Sans',
                       color: Colors.white,
@@ -260,7 +262,7 @@ class _SettingpageWidgetState extends State<SettingpageWidget> {
                       fontWeight: FontWeight.w500,
                     ),
                 elevation: 3.0,
-                borderSide: const BorderSide(
+                borderSide: BorderSide(
                   color: Colors.transparent,
                   width: 1.0,
                 ),

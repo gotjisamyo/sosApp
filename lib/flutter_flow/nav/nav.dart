@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
@@ -9,7 +11,10 @@ import '/auth/base_auth_user_provider.dart';
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -74,18 +79,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const OnboardingsWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : OnboardingsWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const OnboardingsWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : OnboardingsWidget(),
         ),
         FFRoute(
           name: 'Onboardings',
           path: '/onboardings',
-          builder: (context, params) => const OnboardingsWidget(),
+          builder: (context, params) => OnboardingsWidget(),
         ),
         FFRoute(
           name: 'SwichUser',
@@ -97,34 +102,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'auth_2_ForgotPassword',
           path: '/auth2ForgotPassword',
-          builder: (context, params) => const Auth2ForgotPasswordWidget(),
+          builder: (context, params) => Auth2ForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'auth_2_createProfile',
           path: '/auth2CreateProfile',
-          builder: (context, params) => const Auth2CreateProfileWidget(),
+          builder: (context, params) => Auth2CreateProfileWidget(),
         ),
         FFRoute(
           name: 'auth_2_Profile',
           path: '/auth2Profile',
-          builder: (context, params) => const Auth2ProfileWidget(),
+          builder: (context, params) => Auth2ProfileWidget(),
         ),
         FFRoute(
           name: 'auth_2_EditProfile',
           path: '/auth2EditProfile',
-          builder: (context, params) => const Auth2EditProfileWidget(),
+          builder: (context, params) => Auth2EditProfileWidget(),
         ),
         FFRoute(
           name: 'Termsandconditions',
           path: '/termsandconditions',
-          builder: (context, params) => const TermsandconditionsWidget(),
+          builder: (context, params) => TermsandconditionsWidget(),
         ),
         FFRoute(
           name: 'home',
           path: '/home',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'home')
-              : const NavBarPage(
+              ? NavBarPage(initialPage: 'home')
+              : NavBarPage(
                   initialPage: 'home',
                   page: HomeWidget(),
                 ),
@@ -133,7 +138,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ReportAlert',
           path: '/reportAlert',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'ReportAlert')
+              ? NavBarPage(initialPage: 'ReportAlert')
               : ReportAlertWidget(
                   noti: params.getParam('noti', ParamType.int),
                 ),
@@ -142,18 +147,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'emergency',
           path: '/emergency',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'emergency')
-              : const EmergencyWidget(),
+              ? NavBarPage(initialPage: 'emergency')
+              : EmergencyWidget(),
         ),
         FFRoute(
           name: 'settingpage',
           path: '/settingpage',
-          builder: (context, params) => const SettingpageWidget(),
+          builder: (context, params) => SettingpageWidget(),
         ),
         FFRoute(
           name: 'auth_1_EditProfile',
           path: '/auth1EditProfile',
-          builder: (context, params) => const Auth1EditProfileWidget(),
+          builder: (context, params) => Auth1EditProfileWidget(),
         ),
         FFRoute(
           name: 'auth_2_Create',
@@ -230,24 +235,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'NotifyFormBell',
           path: '/notifyFormBell',
-          builder: (context, params) => const NotifyFormBellWidget(),
+          builder: (context, params) => NotifyFormBellWidget(),
         ),
         FFRoute(
           name: 'HomeOfficer',
           path: '/homeOfficer',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'HomeOfficer')
-              : const HomeOfficerWidget(),
+              ? NavBarPage(initialPage: 'HomeOfficer')
+              : HomeOfficerWidget(),
         ),
         FFRoute(
           name: 'auth_1_Profile',
           path: '/auth1Profile',
-          builder: (context, params) => const Auth1ProfileWidget(),
+          builder: (context, params) => Auth1ProfileWidget(),
         ),
         FFRoute(
           name: 'changHome',
           path: '/changHome',
-          builder: (context, params) => const ChangHomeWidget(),
+          builder: (context, params) => ChangHomeWidget(),
         ),
         FFRoute(
           name: 'reportDetail',
@@ -493,7 +498,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

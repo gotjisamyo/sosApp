@@ -2,7 +2,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'red_head_model.dart';
 export 'red_head_model.dart';
 
@@ -33,8 +36,8 @@ class _RedHeadWidgetState extends State<RedHeadWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 400.ms,
-          begin: const Offset(3.0, 3.0),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(3.0, 3.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -63,12 +66,12 @@ class _RedHeadWidgetState extends State<RedHeadWidget>
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 124.0,
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
             child: Container(
               width: double.infinity,
               height: 140.0,
@@ -81,24 +84,24 @@ class _RedHeadWidgetState extends State<RedHeadWidget>
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      const Color(0xFF981616),
+                      Color(0xFF981616),
                       FlutterFlowTheme.of(context).secondaryBackground
                     ],
-                    stops: const [0.0, 1.0],
-                    begin: const AlignmentDirectional(0.0, -1.0),
-                    end: const AlignmentDirectional(0, 1.0),
+                    stops: [0.0, 1.0],
+                    begin: AlignmentDirectional(0.0, -1.0),
+                    end: AlignmentDirectional(0, 1.0),
                   ),
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(0.0),
                     topRight: Radius.circular(0.0),
                   ),
                   border: Border.all(
-                    color: const Color(0x004B39EF),
+                    color: Color(0x004B39EF),
                   ),
                 ),
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
               ),
             ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
           ),

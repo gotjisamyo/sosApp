@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -11,7 +12,7 @@ class GeolocationApiCall {
   static Future<ApiCallResponse> call({
     String? latlngVar = '0',
   }) async {
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
   "radioType": "gsm",
   "carrier": "Vodafone",
@@ -34,7 +35,7 @@ class GeolocationApiCall {
     );
   }
 
-  static dynamic mylatlng(dynamic response) => getJsonField(
+  static dynamic? mylatlng(dynamic response) => getJsonField(
         response,
         r'''$.location''',
       );

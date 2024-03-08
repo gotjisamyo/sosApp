@@ -4,7 +4,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'headercompos2_model.dart';
 export 'headercompos2_model.dart';
 
@@ -35,8 +38,8 @@ class _Headercompos2WidgetState extends State<Headercompos2Widget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 400.ms,
-          begin: const Offset(3.0, 3.0),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(3.0, 3.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -77,12 +80,12 @@ class _Headercompos2WidgetState extends State<Headercompos2Widget>
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 124.0,
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
             child: Container(
               width: double.infinity,
               height: 140.0,
@@ -95,29 +98,29 @@ class _Headercompos2WidgetState extends State<Headercompos2Widget>
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      const Color(0xFF981616),
+                      Color(0xFF981616),
                       FlutterFlowTheme.of(context).secondaryBackground
                     ],
-                    stops: const [0.0, 1.0],
-                    begin: const AlignmentDirectional(0.0, -1.0),
-                    end: const AlignmentDirectional(0, 1.0),
+                    stops: [0.0, 1.0],
+                    begin: AlignmentDirectional(0.0, -1.0),
+                    end: AlignmentDirectional(0, 1.0),
                   ),
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(0.0),
                     topRight: Radius.circular(0.0),
                   ),
                   border: Border.all(
-                    color: const Color(0x004B39EF),
+                    color: Color(0x004B39EF),
                   ),
                 ),
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Align(
-                  alignment: const AlignmentDirectional(1.0, -1.0),
+                  alignment: AlignmentDirectional(1.0, -1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 10.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -139,9 +142,9 @@ class _Headercompos2WidgetState extends State<Headercompos2Widget>
             ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
           ),
           Align(
-            alignment: const AlignmentDirectional(-1.0, 2.04),
+            alignment: AlignmentDirectional(-1.0, 2.04),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
               child: Container(
                 width: 80.0,
                 height: 80.0,
@@ -153,9 +156,9 @@ class _Headercompos2WidgetState extends State<Headercompos2Widget>
                     width: 2.0,
                   ),
                 ),
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(4.0),
+                  padding: EdgeInsets.all(4.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => InkWell(
                       splashColor: Colors.transparent,
@@ -168,8 +171,8 @@ class _Headercompos2WidgetState extends State<Headercompos2Widget>
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(50.0),
                         child: CachedNetworkImage(
-                          fadeInDuration: const Duration(milliseconds: 500),
-                          fadeOutDuration: const Duration(milliseconds: 500),
+                          fadeInDuration: Duration(milliseconds: 500),
+                          fadeOutDuration: Duration(milliseconds: 500),
                           imageUrl: currentUserPhoto,
                           width: 100.0,
                           height: 112.0,

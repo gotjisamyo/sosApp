@@ -1,9 +1,12 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'notify_form_bell_model.dart';
 export 'notify_form_bell_model.dart';
 
@@ -69,7 +72,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                   fontWeight: FontWeight.normal,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -100,7 +103,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
             List<ReportToStationRecord> listViewReportToStationRecordList =
                 snapshot.data!;
             return ListView.separated(
-              padding: const EdgeInsets.fromLTRB(
+              padding: EdgeInsets.fromLTRB(
                 0,
                 4.0,
                 0,
@@ -108,17 +111,17 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
               ),
               scrollDirection: Axis.vertical,
               itemCount: listViewReportToStationRecordList.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 8.0),
+              separatorBuilder: (_, __) => SizedBox(height: 8.0),
               itemBuilder: (context, listViewIndex) {
                 final listViewReportToStationRecord =
                     listViewReportToStationRecordList[listViewIndex];
                 return Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 3.0,
                           color: Color(0x33000000),
@@ -132,7 +135,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,7 +152,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                               ),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: FaIcon(
                                 FontAwesomeIcons.solidBell,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -159,7 +162,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 4.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -217,7 +220,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                                     },
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -230,11 +233,11 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                             border: Border.all(
-                                              color: const Color(0xFFE5E7EB),
+                                              color: Color(0xFFE5E7EB),
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
+                                            padding: EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
@@ -250,7 +253,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -298,7 +301,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -330,7 +333,7 @@ class _NotifyFormBellWidgetState extends State<NotifyFormBellWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 4.0),
                                     child: Text(
                                       dateTimeFormat(

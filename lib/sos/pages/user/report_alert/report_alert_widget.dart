@@ -2,8 +2,13 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'report_alert_model.dart';
 export 'report_alert_model.dart';
 
@@ -11,7 +16,7 @@ class ReportAlertWidget extends StatefulWidget {
   const ReportAlertWidget({
     super.key,
     int? noti,
-  }) : noti = noti ?? 0;
+  }) : this.noti = noti ?? 0;
 
   final int noti;
 
@@ -63,33 +68,33 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                   width: 270.0,
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF1F4F8),
+                    color: Color(0xFFF1F4F8),
                     borderRadius: BorderRadius.circular(0.0),
                     border: Border.all(
-                      color: const Color(0xFFE5E7EB),
+                      color: Color(0xFFE5E7EB),
                       width: 1.0,
                     ),
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.add_task_rounded,
                                 color: Color(0xFF6F61EF),
                                 size: 32.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'check.io',
@@ -97,7 +102,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                       .headlineMedium
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: const Color(0xFF15161E),
+                                        color: Color(0xFF15161E),
                                         fontSize: 24.0,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -106,7 +111,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                             ],
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           height: 12.0,
                           thickness: 2.0,
                           color: Color(0xFFE5E7EB),
@@ -117,7 +122,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   'Platform Navigation',
@@ -125,39 +130,39 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: const Color(0xFF606A85),
+                                        color: Color(0xFF606A85),
                                         fontSize: 14.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFFF1F4F8),
+                                    color: Color(0xFFF1F4F8),
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        const Icon(
+                                        Icon(
                                           Icons.space_dashboard,
                                           color: Color(0xFF15161E),
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Dashboard',
@@ -166,7 +171,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF15161E),
+                                                  color: Color(0xFF15161E),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -178,32 +183,32 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFFF1F4F8),
+                                    color: Color(0xFFF1F4F8),
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        const Icon(
+                                        Icon(
                                           Icons.forum_rounded,
                                           color: Color(0xFF15161E),
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Chats',
@@ -212,7 +217,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF15161E),
+                                                  color: Color(0xFF15161E),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -224,32 +229,32 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFFF1F4F8),
+                                    color: Color(0xFFF1F4F8),
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        const Icon(
+                                        Icon(
                                           Icons.work,
                                           color: Color(0xFF15161E),
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Projects',
@@ -258,7 +263,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF15161E),
+                                                  color: Color(0xFF15161E),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -270,7 +275,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Settings',
@@ -278,32 +283,32 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: const Color(0xFF606A85),
+                                        color: Color(0xFF606A85),
                                         fontSize: 14.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0x4D9489F5),
+                                    color: Color(0x4D9489F5),
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        const Icon(
+                                        Icon(
                                           Icons.notifications_rounded,
                                           color: Color(0xFF6F61EF),
                                           size: 24.0,
@@ -311,7 +316,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Notifications',
@@ -321,7 +326,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF15161E),
+                                                    color: Color(0xFF15161E),
                                                     fontSize: 14.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
@@ -331,15 +336,15 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                         Container(
                                           height: 32.0,
                                           decoration: BoxDecoration(
-                                            color: const Color(0xFF6F61EF),
+                                            color: Color(0xFF6F61EF),
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 4.0, 8.0, 4.0),
                                               child: Text(
                                                 '12',
@@ -364,32 +369,32 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFFF1F4F8),
+                                    color: Color(0xFFF1F4F8),
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        const Icon(
+                                        Icon(
                                           Icons.attach_money_rounded,
                                           color: Color(0xFF15161E),
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Billing',
@@ -398,7 +403,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF15161E),
+                                                  color: Color(0xFF15161E),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -410,32 +415,32 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFFF1F4F8),
+                                    color: Color(0xFFF1F4F8),
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        const Icon(
+                                        Icon(
                                           Icons.wifi_tethering_rounded,
                                           color: Color(0xFF15161E),
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Explore',
@@ -444,7 +449,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF15161E),
+                                                  color: Color(0xFF15161E),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -455,27 +460,27 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 12.0)),
+                            ].divide(SizedBox(height: 12.0)),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 16.0),
                             child: Container(
                               width: 250.0,
                               height: 50.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFF1F4F8),
+                                color: Color(0xFFF1F4F8),
                                 borderRadius: BorderRadius.circular(12.0),
                                 border: Border.all(
-                                  color: const Color(0xFFE5E7EB),
+                                  color: Color(0xFFE5E7EB),
                                   width: 1.0,
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -488,16 +493,16 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                           color: Theme.of(context).brightness ==
                                                   Brightness.light
                                               ? Colors.white
-                                              : const Color(0xFFF1F4F8),
+                                              : Color(0xFFF1F4F8),
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                           border: Border.all(
                                             color: valueOrDefault<Color>(
                                               Theme.of(context).brightness ==
                                                       Brightness.light
-                                                  ? const Color(0xFFE5E7EB)
-                                                  : const Color(0xFFF1F4F8),
-                                              const Color(0xFFE5E7EB),
+                                                  ? Color(0xFFE5E7EB)
+                                                  : Color(0xFFF1F4F8),
+                                              Color(0xFFE5E7EB),
                                             ),
                                             width: 1.0,
                                           ),
@@ -512,12 +517,12 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                               color: Theme.of(context)
                                                           .brightness ==
                                                       Brightness.light
-                                                  ? const Color(0xFF15161E)
-                                                  : const Color(0xFF606A85),
+                                                  ? Color(0xFF15161E)
+                                                  : Color(0xFF606A85),
                                               size: 16.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Light Mode',
@@ -530,8 +535,8 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                       color: Theme.of(context)
                                                                   .brightness ==
                                                               Brightness.light
-                                                          ? const Color(0xFF15161E)
-                                                          : const Color(0xFF606A85),
+                                                          ? Color(0xFF15161E)
+                                                          : Color(0xFF606A85),
                                                       fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.w500,
@@ -550,16 +555,16 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                           color: Theme.of(context).brightness ==
                                                   Brightness.dark
                                               ? Colors.white
-                                              : const Color(0xFFF1F4F8),
+                                              : Color(0xFFF1F4F8),
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                           border: Border.all(
                                             color: valueOrDefault<Color>(
                                               Theme.of(context).brightness ==
                                                       Brightness.dark
-                                                  ? const Color(0xFFE5E7EB)
-                                                  : const Color(0xFFF1F4F8),
-                                              const Color(0xFFF1F4F8),
+                                                  ? Color(0xFFE5E7EB)
+                                                  : Color(0xFFF1F4F8),
+                                              Color(0xFFF1F4F8),
                                             ),
                                             width: 1.0,
                                           ),
@@ -574,12 +579,12 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                               color: Theme.of(context)
                                                           .brightness ==
                                                       Brightness.dark
-                                                  ? const Color(0xFF15161E)
-                                                  : const Color(0xFF606A85),
+                                                  ? Color(0xFF15161E)
+                                                  : Color(0xFF606A85),
                                               size: 16.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Dark Mode',
@@ -592,8 +597,8 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                       color: Theme.of(context)
                                                                   .brightness ==
                                                               Brightness.dark
-                                                          ? const Color(0xFF15161E)
-                                                          : const Color(0xFF606A85),
+                                                          ? Color(0xFF15161E)
+                                                          : Color(0xFF606A85),
                                                       fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.w500,
@@ -610,13 +615,13 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           height: 12.0,
                           thickness: 2.0,
                           color: Color(0xFFE5E7EB),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -625,22 +630,22 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 width: 50.0,
                                 height: 50.0,
                                 decoration: BoxDecoration(
-                                  color: const Color(0x4D9489F5),
+                                  color: Color(0x4D9489F5),
                                   borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
-                                    color: const Color(0xFF6F61EF),
+                                    color: Color(0xFF6F61EF),
                                     width: 2.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(2.0),
+                                  padding: EdgeInsets.all(2.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: CachedNetworkImage(
                                       fadeInDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       fadeOutDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       imageUrl:
                                           'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                                       width: 44.0,
@@ -652,7 +657,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -665,7 +670,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                             .bodyLarge
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: const Color(0xFF15161E),
+                                              color: Color(0xFF15161E),
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -676,7 +681,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: const Color(0xFF606A85),
+                                              color: Color(0xFF606A85),
                                               fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -688,7 +693,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                             ],
                           ),
                         ),
-                        const Padding(
+                        Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Row(
@@ -709,19 +714,19 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                 ),
               Expanded(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 1170.0,
                     ),
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 24.0, 0.0, 0.0),
                           child: Text(
                             'ประวัติการเเจ้ง',
@@ -729,14 +734,14 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 .headlineMedium
                                 .override(
                                   fontFamily: 'Outfit',
-                                  color: const Color(0xFF15161E),
+                                  color: Color(0xFF15161E),
                                   fontSize: 24.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 0.0, 24.0),
                           child: Text(
                             'ประวัติการเเจ้งเตือนล่าสุด',
@@ -744,7 +749,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF606A85),
+                                  color: Color(0xFF606A85),
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -784,7 +789,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                               itemCount:
                                   listViewReportToStationRecordList.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 1.0),
+                                  SizedBox(height: 1.0),
                               itemBuilder: (context, listViewIndex) {
                                 final listViewReportToStationRecord =
                                     listViewReportToStationRecordList[
@@ -810,7 +815,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                   },
                                   child: Container(
                                     width: 100.0,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       color: Colors.white,
                                       boxShadow: [
                                         BoxShadow(
@@ -821,7 +826,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                       ],
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 12.0, 16.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -829,19 +834,19 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Align(
-                                            alignment: const AlignmentDirectional(
+                                            alignment: AlignmentDirectional(
                                                 -1.0, -1.0),
                                             child: AnimatedContainer(
                                               duration:
-                                                  const Duration(milliseconds: 150),
+                                                  Duration(milliseconds: 150),
                                               curve: Curves.easeInOut,
                                               width: 36.0,
                                               height: 36.0,
                                               decoration: BoxDecoration(
-                                                color: const Color(0x4D9489F5),
+                                                color: Color(0x4D9489F5),
                                                 shape: BoxShape.circle,
                                                 border: Border.all(
-                                                  color: const Color(0xFF6F61EF),
+                                                  color: Color(0xFF6F61EF),
                                                   width: 2.0,
                                                 ),
                                               ),
@@ -905,7 +910,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                           width: 300.0,
                                                           height: 200.0,
                                                           fit: BoxFit.cover,
-                                                          alignment: const Alignment(
+                                                          alignment: Alignment(
                                                               0.0, 0.0),
                                                         ),
                                                       );
@@ -917,7 +922,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                           ),
                                           Flexible(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 0.0, 0.0),
                                               child: Column(
@@ -927,7 +932,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: Row(
@@ -1000,7 +1005,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              const Color(0xFF6F61EF),
+                                                                              Color(0xFF6F61EF),
                                                                           fontSize:
                                                                               16.0,
                                                                           fontWeight:
@@ -1014,7 +1019,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF15161E),
                                                                       fontSize:
                                                                           16.0,
@@ -1038,24 +1043,24 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                     ),
                                                   ),
                                                   AnimatedContainer(
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 150),
                                                     curve: Curves.easeInOut,
                                                     width: double.infinity,
                                                     decoration: BoxDecoration(
-                                                      color: const Color(0x4D9489F5),
+                                                      color: Color(0x4D9489F5),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               12.0),
                                                       border: Border.all(
                                                         color:
-                                                            const Color(0xFF6F61EF),
+                                                            Color(0xFF6F61EF),
                                                         width: 2.0,
                                                       ),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(12.0),
+                                                          EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1072,7 +1077,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Plus Jakarta Sans',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFF6F61EF),
                                                                   fontSize:
                                                                       12.0,
@@ -1083,7 +1088,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -1098,7 +1103,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         16.0,
@@ -1114,7 +1119,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 5.0),
                                                     child: Row(
@@ -1123,7 +1128,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -1200,7 +1205,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF606A85),
                                                                       fontSize:
                                                                           14.0,
@@ -1214,7 +1219,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -1229,7 +1234,7 @@ class _ReportAlertWidgetState extends State<ReportAlertWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Inter',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0x004B39EF),
                                                                 ),
                                                           ),

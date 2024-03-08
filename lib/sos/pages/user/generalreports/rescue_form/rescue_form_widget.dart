@@ -10,9 +10,12 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
+import 'package:provider/provider.dart';
 import 'rescue_form_model.dart';
 export 'rescue_form_model.dart';
 
@@ -104,7 +107,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
             resizeToAvoidBottomInset: false,
             backgroundColor: Colors.white,
             appBar: AppBar(
-              backgroundColor: const Color(0xFF981616),
+              backgroundColor: Color(0xFF981616),
               automaticallyImplyLeading: false,
               leading: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -129,7 +132,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                       fontWeight: FontWeight.w500,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 0.0,
             ),
@@ -139,14 +142,14 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               'กู้ภัยสว่างกตัญญู',
@@ -154,14 +157,14 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                   .headlineMedium
                                   .override(
                                     fontFamily: 'Outfit',
-                                    color: const Color(0xFF15161E),
+                                    color: Color(0xFF15161E),
                                     fontSize: 24.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -177,7 +180,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: const Color(0xFF606A85),
+                                          color: Color(0xFF606A85),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -185,52 +188,52 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: const Color(0xFF606A85),
+                                          color: Color(0xFF606A85),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFFE5E7EB),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFF6F61EF),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     contentPadding:
-                                        const EdgeInsetsDirectional.fromSTEB(
+                                        EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: const Color(0xFF15161E),
+                                        color: Color(0xFF15161E),
                                         fontSize: 14.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                   minLines: 1,
-                                  cursorColor: const Color(0xFF6F61EF),
+                                  cursorColor: Color(0xFF6F61EF),
                                   validator: _model.titleControllerValidator
                                       .asValidator(context),
                                 ),
@@ -244,7 +247,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: const Color(0xFF15161E),
+                                          color: Color(0xFF15161E),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -253,66 +256,66 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: const Color(0xFF15161E),
+                                          color: Color(0xFF15161E),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFFE5E7EB),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFF6F61EF),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0xFFFF5963),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     contentPadding:
-                                        const EdgeInsetsDirectional.fromSTEB(
+                                        EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: const Color(0xFF15161E),
+                                        color: Color(0xFF15161E),
                                         fontSize: 14.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                   maxLines: 16,
                                   minLines: 6,
-                                  cursorColor: const Color(0xFF6F61EF),
+                                  cursorColor: Color(0xFF6F61EF),
                                   validator: _model.detailControllerValidator
                                       .asValidator(context),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Container(
                               width: 404.0,
                               height: 265.0,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: double.infinity,
                                 maxHeight: double.infinity,
                               ),
@@ -325,12 +328,12 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           1.0, 0.0, 0.0, 0.0),
                                       child: Builder(builder: (context) {
-                                        final googleMapMarker =
+                                        final _googleMapMarker =
                                             functions.stringToLatlng(
                                                 valueOrDefault<String>(
                                           _model.toResult,
@@ -350,10 +353,10 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                             '12.6018278,102.0527786',
                                           ))!,
                                           markers: [
-                                            if (googleMapMarker != null)
+                                            if (_googleMapMarker != null)
                                               FlutterFlowMarker(
-                                                googleMapMarker.serialize(),
-                                                googleMapMarker,
+                                                _googleMapMarker.serialize(),
+                                                _googleMapMarker,
                                               ),
                                           ],
                                           markerColor: GoogleMarkerColor.violet,
@@ -373,7 +376,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(0.89, 0.77),
+                                    alignment: AlignmentDirectional(0.89, 0.77),
                                     child: PointerInterceptor(
                                       intercepting: isWeb,
                                       child: FutureBuilder<ApiCallResponse>(
@@ -438,7 +441,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                                                 .primaryText,
                                                       ),
                                                     ),
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
@@ -459,7 +462,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                                                 .primaryText,
                                                       ),
                                                     ),
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
@@ -472,18 +475,18 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                               setState(() {});
                                             },
                                             text: '',
-                                            icon: const Icon(
+                                            icon: Icon(
                                               Icons.person_pin_circle,
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
                                               width: 40.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(7.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFF981616),
+                                              color: Color(0xFF981616),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -492,7 +495,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                                         color: Colors.white,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -509,7 +512,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -521,7 +524,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -531,9 +534,9 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -543,11 +546,11 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(12.0),
                                   bottomRight: Radius.circular(12.0),
                                   topLeft: Radius.circular(0.0),
@@ -557,7 +560,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -628,7 +631,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -636,29 +639,29 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                               },
                               child: Container(
                                 width: double.infinity,
-                                constraints: const BoxConstraints(
+                                constraints: BoxConstraints(
                                   maxWidth: 500.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
-                                    color: const Color(0xFFE5E7EB),
+                                    color: Color(0xFFE5E7EB),
                                     width: 2.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      const Icon(
+                                      Icon(
                                         Icons.add_a_photo_rounded,
                                         color: Color(0xFF981616),
                                         size: 32.0,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -673,7 +676,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0xFF15161E),
+                                                color: Color(0xFF15161E),
                                                 fontSize: 14.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -686,7 +689,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 12.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -719,7 +722,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -728,17 +731,17 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                 context.pushNamed('home');
                               },
                               text: 'ส่ง',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.receipt_long,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 48.0,
-                                padding: const EdgeInsets.all(0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsets.all(0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xFF981616),
+                                color: Color(0xFF981616),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -748,7 +751,7 @@ class _RescueFormWidgetState extends State<RescueFormWidget> {
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 4.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

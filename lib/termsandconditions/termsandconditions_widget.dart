@@ -2,6 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'termsandconditions_model.dart';
 export 'termsandconditions_model.dart';
 
@@ -45,7 +47,7 @@ class _TermsandconditionsWidgetState extends State<TermsandconditionsWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -54,7 +56,7 @@ class _TermsandconditionsWidgetState extends State<TermsandconditionsWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Text(
                       'เงื่อนไข และ ข้อตกลง',
                       style:
@@ -67,7 +69,7 @@ class _TermsandconditionsWidgetState extends State<TermsandconditionsWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 16.0),
                     child: Text(
                       'เมื่อประเมินเหตุการณ์ว่าเป็นเหตุการณ์ฉุกเฉิน วิกฤติ ก็จะส่งทีมไปช่วยเหลือในที่เกิดเหตุต่าง ๆ ในทันที และส่งต่อไปยังหน่วยงานอื่น ๆ อย่างเช่น อุบัติเหตุรถยยนต์ จะมีหน่วยงานประสานกันทั้งในส่วนของตำรวจและโรงพยาบาลที่อยู่ใกล้ที่สุด ให้ทันท่วงทีต่อการรักษาชีวิตผู้ประสบเหตุฉุกเฉิน เพราะหากส่งผู้ประสบเหตุถึงมือแพทย์ช้าก็จะทำให้เสี่ยงต่อ\nชีวิตโดยเมื่อเจ้าหน้าที่ส่งผู้ป่วยฉุกเฉินถึงโรงพยาบาลแล้วก็\nเป็นหน้าที่ของโรงพยาบาลนั้น ๆ ที่จะทำการรักษา\nจนพ้นวิกฤตแล้วจึงจะพิจารณาส่งต่อผู้ป่วยไปยังโรงพยาบาลที่ผู้ป่วยมีสิทธิหรือมีประวัติในการรักษา',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -77,7 +79,7 @@ class _TermsandconditionsWidgetState extends State<TermsandconditionsWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         context.safePop();
@@ -87,10 +89,10 @@ class _TermsandconditionsWidgetState extends State<TermsandconditionsWidget> {
                         width: double.infinity,
                         height: 50.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xFF981616),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFF981616),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Inter',

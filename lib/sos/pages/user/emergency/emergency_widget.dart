@@ -2,8 +2,12 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'emergency_model.dart';
 export 'emergency_model.dart';
@@ -95,16 +99,16 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF981616),
+        backgroundColor: Color(0xFF981616),
         appBar: AppBar(
-          backgroundColor: const Color(0xFF981616),
+          backgroundColor: Color(0xFF981616),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -113,22 +117,22 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
               context.pushNamed('home');
             },
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: Align(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 400.0,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
@@ -153,9 +157,9 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Text(
                                     'แจ้งเหตุด่วน',
@@ -164,7 +168,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: const Color(0xFF981616),
+                                          color: Color(0xFF981616),
                                           fontSize: 30.0,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -172,9 +176,9 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 16.0, 0.0, 0.0),
                                   child: Text(
                                     'กดที่ภาพสี่เหลี่ยมเพือโทรเเจ้งเหตุด่วน',
@@ -189,15 +193,15 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Wrap(
                                           spacing: 16.0,
@@ -230,8 +234,8 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         0.4,
                                                 height: 160.0,
                                                 decoration: BoxDecoration(
-                                                  color: const Color(0xFFF1F4F8),
-                                                  boxShadow: const [
+                                                  color: Color(0xFFF1F4F8),
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -243,7 +247,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                           24.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -251,7 +255,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      const Icon(
+                                                      Icon(
                                                         Icons.local_police,
                                                         color:
                                                             Color(0xFF101213),
@@ -259,7 +263,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -275,7 +279,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 36.0,
                                                                 fontWeight:
@@ -294,7 +298,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF57636C),
                                                               fontSize: 12.0,
                                                               fontWeight:
@@ -327,8 +331,8 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         0.4,
                                                 height: 160.0,
                                                 decoration: BoxDecoration(
-                                                  color: const Color(0xFFF1F4F8),
-                                                  boxShadow: const [
+                                                  color: Color(0xFFF1F4F8),
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -340,7 +344,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                           24.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -348,7 +352,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      const Icon(
+                                                      Icon(
                                                         Icons.local_hospital,
                                                         color:
                                                             Color(0xFF101213),
@@ -356,7 +360,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -372,7 +376,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 36.0,
                                                                 fontWeight:
@@ -391,7 +395,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF57636C),
                                                               fontSize: 12.0,
                                                               fontWeight:
@@ -424,8 +428,8 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         0.4,
                                                 height: 160.0,
                                                 decoration: BoxDecoration(
-                                                  color: const Color(0xFFF1F4F8),
-                                                  boxShadow: const [
+                                                  color: Color(0xFFF1F4F8),
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -437,7 +441,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                           24.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -445,7 +449,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      const Icon(
+                                                      Icon(
                                                         Icons
                                                             .fire_hydrant_alt_outlined,
                                                         color:
@@ -454,7 +458,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -470,7 +474,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 36.0,
                                                                 fontWeight:
@@ -489,7 +493,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF57636C),
                                                               fontSize: 12.0,
                                                               fontWeight:
@@ -522,8 +526,8 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         0.4,
                                                 height: 160.0,
                                                 decoration: BoxDecoration(
-                                                  color: const Color(0xFFF1F4F8),
-                                                  boxShadow: const [
+                                                  color: Color(0xFFF1F4F8),
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -535,7 +539,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                           24.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -543,7 +547,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      const Icon(
+                                                      Icon(
                                                         Icons.hail,
                                                         color:
                                                             Color(0xFF101213),
@@ -551,7 +555,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -567,7 +571,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 22.0,
                                                                 fontWeight:
@@ -586,7 +590,7 @@ class _EmergencyWidgetState extends State<EmergencyWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF57636C),
                                                               fontSize: 12.0,
                                                               fontWeight:
