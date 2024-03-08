@@ -1,9 +1,9 @@
 import '/backend/api_requests/api_calls.dart';
+import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'googlemap_model.dart';
 export 'googlemap_model.dart';
@@ -31,6 +31,8 @@ class _GooglemapWidgetState extends State<GooglemapWidget> {
     super.initState();
     _model = createModel(context, () => GooglemapModel());
 
+    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
+        .then((loc) => setState(() => currentUserLocationValue = loc));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -43,6 +45,23 @@ class _GooglemapWidgetState extends State<GooglemapWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (currentUserLocationValue == null) {
+      return Container(
+        color: FlutterFlowTheme.of(context).primaryBackground,
+        child: Center(
+          child: SizedBox(
+            width: 50.0,
+            height: 50.0,
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(
+                FlutterFlowTheme.of(context).primary,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
     return FutureBuilder<ApiCallResponse>(
       future: GeolocationApiCall.call(),
       builder: (context, snapshot) {
@@ -70,6 +89,7 @@ class _GooglemapWidgetState extends State<GooglemapWidget> {
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
+            resizeToAvoidBottomInset: false,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             floatingActionButton: Align(
               alignment: const AlignmentDirectional(1.0, 1.0),
@@ -139,14 +159,6 @@ class _GooglemapWidgetState extends State<GooglemapWidget> {
                 ),
                 child: Stack(
                   children: [
-                    const SizedBox(
-                      width: double.infinity,
-                      height: double.infinity,
-                      child: custom_widgets.MySosMap(
-                        width: double.infinity,
-                        height: double.infinity,
-                      ),
-                    ),
                     Align(
                       alignment: const AlignmentDirectional(0.89, -0.95),
                       child: InkWell(
@@ -243,6 +255,35 @@ class _GooglemapWidgetState extends State<GooglemapWidget> {
                         ),
                       ),
                     ),
+                    Builder(builder: (context) {
+                      final googleMapMarker = currentUserLocationValue;
+                      return FlutterFlowGoogleMap(
+                        controller: _model.googleMapsController,
+                        onCameraIdle: (latLng) =>
+                            _model.googleMapsCenter = latLng,
+                        initialLocation: _model.googleMapsCenter ??=
+                            currentUserLocationValue!,
+                        markers: [
+                          if (googleMapMarker != null)
+                            FlutterFlowMarker(
+                              googleMapMarker.serialize(),
+                              googleMapMarker,
+                            ),
+                        ],
+                        markerColor: GoogleMarkerColor.violet,
+                        mapType: MapType.normal,
+                        style: GoogleMapStyle.standard,
+                        initialZoom: 14.0,
+                        allowInteraction: true,
+                        allowZoom: true,
+                        showZoomControls: true,
+                        showLocation: true,
+                        showCompass: false,
+                        showMapToolbar: false,
+                        showTraffic: false,
+                        centerMapOnMarkerTap: true,
+                      );
+                    }),
                   ],
                 ),
               ),

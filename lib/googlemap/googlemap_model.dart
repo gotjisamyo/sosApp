@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'googlemap_widget.dart' show GooglemapWidget;
 import 'package:flutter/material.dart';
@@ -9,6 +10,9 @@ class GooglemapModel extends FlutterFlowModel<GooglemapWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - API (directionAPI)] action in Button widget.
   ApiCallResponse? apiResultq44;
+  // State field(s) for GoogleMap widget.
+  LatLng? googleMapsCenter;
+  final googleMapsController = Completer<GoogleMapController>();
   // Stores action output result for [Backend Call - API (GeolocationApi)] action in FloatingActionButton widget.
   ApiCallResponse? apiResultspl;
   // Stores action output result for [Custom Action - jsonTostring] action in FloatingActionButton widget.
